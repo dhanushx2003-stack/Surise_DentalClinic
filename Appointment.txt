@@ -134,3 +134,12 @@ Treatment Type: Cleaning
 Appointment Date: 2026-12-05
 Appointment Time: 06:20 AM
 ----------------------------------------------
+Appointment Number: 126
+Patient Name: Roshal Fernando
+Address: Anuradhapura
+Contact Number: 07789654147
+Dentist Name: Dr. Joseph
+Treatment Type: Dental Implants
+Appointment Date: 2026-11-14
+Appointment Time: 10:30 AM
+----------------------------------------------
