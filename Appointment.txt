@@ -125,3 +125,12 @@ Treatment Type: Dental Implants
 Appointment Date: 2026-10-07
 Appointment Time: 09:00 AM
 ----------------------------------------------
+Appointment Number: 125
+Patient Name: Benjamin Parker
+Address: Slave Island
+Contact Number: 0225417489
+Dentist Name: Dr. Christine
+Treatment Type: Cleaning
+Appointment Date: 2026-12-05
+Appointment Time: 06:20 AM
+----------------------------------------------

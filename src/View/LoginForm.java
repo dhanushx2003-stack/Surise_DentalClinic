@@ -42,7 +42,6 @@ public class LoginForm extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        Loginbtn2 = new javax.swing.JButton();
         Loginbtn = new javax.swing.JButton();
         Signbtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -63,22 +62,6 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel4.setText("Don't have an account?");
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-
-        Loginbtn2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Loginbtn2.setText("Clear");
-        Loginbtn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Loginbtn2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Loginbtn2MouseExited(evt);
-            }
-        });
-        Loginbtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Loginbtn2ActionPerformed(evt);
-            }
-        });
 
         Loginbtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Loginbtn.setText("Login");
@@ -121,7 +104,7 @@ public class LoginForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                 .addGap(84, 84, 84))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,9 +126,7 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Loginbtn)
-                .addGap(37, 37, 37)
-                .addComponent(Loginbtn2)
-                .addGap(140, 140, 140))
+                .addGap(249, 249, 249))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +142,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Loginbtn2)
-                    .addComponent(Loginbtn))
+                .addComponent(Loginbtn)
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -175,21 +154,21 @@ public class LoginForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Loginbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Loginbtn2ActionPerformed
-        // TODO add your handling code here:
-        jTextField1.setText("");
-        jPasswordField1.setText("");
-    }//GEN-LAST:event_Loginbtn2ActionPerformed
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
         // TODO add your handling code here:
@@ -291,16 +270,6 @@ public class LoginForm extends javax.swing.JFrame {
         Loginbtn.setBackground(Color.white);
     }//GEN-LAST:event_LoginbtnMouseExited
 
-    private void Loginbtn2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Loginbtn2MouseEntered
-        // TODO add your handling code here:
-        Loginbtn2.setBackground(Color.green);
-    }//GEN-LAST:event_Loginbtn2MouseEntered
-
-    private void Loginbtn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Loginbtn2MouseExited
-        // TODO add your handling code here:
-        Loginbtn2.setBackground(Color.white);
-    }//GEN-LAST:event_Loginbtn2MouseExited
-
     private void SignbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignbtnMouseEntered
         // TODO add your handling code here:
         Signbtn.setBackground(Color.green);
@@ -348,7 +317,6 @@ public class LoginForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Loginbtn;
-    private javax.swing.JButton Loginbtn2;
     private javax.swing.JButton Signbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
