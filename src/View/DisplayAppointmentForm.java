@@ -307,12 +307,9 @@ public class DisplayAppointmentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_BackbtnMouseExited
 
     private void BackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbtnActionPerformed
-        try {
+       
             // TODO add your handling code here:
-            new MenuForm().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(DisplayAppointmentForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            new StaffForm().setVisible(true);
         dispose();
     }//GEN-LAST:event_BackbtnActionPerformed
 

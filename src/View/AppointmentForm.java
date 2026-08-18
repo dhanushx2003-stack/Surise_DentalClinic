@@ -30,11 +30,7 @@ public class AppointmentForm extends javax.swing.JFrame {
     public AppointmentForm() {
         initComponents();
 
-        buttonGroup1.add(jRadioButton1);
-        buttonGroup1.add(jRadioButton2);
-        buttonGroup1.add(jRadioButton3);
-        buttonGroup1.add(jRadioButton4);
-        buttonGroup1.add(jRadioButton5);
+       
     }
 
     /**
@@ -61,14 +57,11 @@ public class AppointmentForm extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton4 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         Addbtn = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         Backbtn = new javax.swing.JButton();
@@ -76,12 +69,9 @@ public class AppointmentForm extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jRadioButton2 = new javax.swing.JRadioButton();
         jTextField8 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
         jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
 
@@ -233,9 +223,6 @@ public class AppointmentForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Patient Name");
 
-        jRadioButton4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jRadioButton4.setText("Dental Implants (Dr. Joseph)");
-
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setText("Address");
 
@@ -244,17 +231,11 @@ public class AppointmentForm extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel5.setText("Contact Number");
 
-        jRadioButton5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jRadioButton5.setText("Cleaning (Dr. Christine)");
-
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Dentist Name");
 
         jTextField7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField7.setToolTipText("");
-
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel7.setText("Treatment Type");
 
         Addbtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Addbtn.setText("Add");
@@ -314,9 +295,6 @@ public class AppointmentForm extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
-        jRadioButton2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jRadioButton2.setText("Whitening (Dr. Marian)");
-
         jTextField8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,16 +302,10 @@ public class AppointmentForm extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jRadioButton1.setText("Root Canal (Dr. Ranjan)");
-
         jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Patient Appointment Registration");
-
-        jRadioButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jRadioButton3.setText("Extraction (Dr. Wilson)");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Appointment Number");
@@ -370,9 +342,9 @@ public class AppointmentForm extends javax.swing.JFrame {
                                         .addComponent(jLabel5)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(Addbtn)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addGap(45, 45, 45)
+                                            .addComponent(Addbtn))))
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -386,19 +358,8 @@ public class AppointmentForm extends javax.swing.JFrame {
                                         .addGap(110, 110, 110)
                                         .addComponent(Clearbtn)
                                         .addGap(30, 30, 30)
-                                        .addComponent(Backbtn))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton1)
-                                            .addComponent(jRadioButton4))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addComponent(jRadioButton2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jRadioButton3))
-                                            .addComponent(jRadioButton5)))))))
+                                        .addComponent(Backbtn)))
+                                .addGap(253, 253, 253))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(181, 181, 181)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -430,17 +391,6 @@ public class AppointmentForm extends javax.swing.JFrame {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(jRadioButton3)
-                        .addComponent(jRadioButton2)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
-                .addGap(19, 19, 19)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
@@ -448,7 +398,7 @@ public class AppointmentForm extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addGap(139, 139, 139)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -527,52 +477,30 @@ public class AppointmentForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
-            if (jTextField1.getText().isEmpty()
-                || jTextField2.getText().isEmpty()
-                || jTextField3.getText().isEmpty()
-                || jTextField4.getText().isEmpty()
-                || jTextField5.getText().isEmpty()
-                || jTextField7.getText().isEmpty()
-                || jTextField8.getText().isEmpty()){
+            if (jTextField1.getText().trim().isEmpty()
+                || jTextField2.getText().trim().isEmpty()
+                || jTextField3.getText().trim().isEmpty()
+                || jTextField4.getText().trim().isEmpty()
+                || jTextField5.getText().trim().isEmpty()
+                || jTextField7.getText().trim().isEmpty()
+                || jTextField8.getText().trim().isEmpty()){
 
                 JOptionPane.showMessageDialog(this, "Add the details");
                 return;
             }
 
-            if (!jRadioButton1.isSelected()
-                && !jRadioButton2.isSelected()
-                && !jRadioButton3.isSelected()
-                && !jRadioButton4.isSelected()
-                && !jRadioButton5.isSelected()) {
-
-                JOptionPane.showMessageDialog(this, "Select treatment type");
-                return;
-            }
-
-            String Treatment = "";
-
-            if (jRadioButton1.isSelected()) {
-                Treatment = "Root Canal";
-            } else if (jRadioButton2.isSelected()) {
-                Treatment = "Whitening";
-            } else if (jRadioButton3.isSelected()) {
-                Treatment = "Extraction";
-            } else if (jRadioButton4.isSelected()) {
-                Treatment = "Dental Implants";
-            } else if (jRadioButton5.isSelected()) {
-                Treatment = "Cleaning";
-            }
+          
 
             Appointment a = new Appointment();
 
-            a.setAppointmentNo(Integer.parseInt(jTextField1.getText()));
-            a.setPatientName(jTextField2.getText());
-            a.setAddress(jTextField3.getText());
-            a.setContactNo(jTextField4.getText());
-            a.setDentistName(jTextField5.getText());
-            a.setTreatmentType(Treatment);
-            a.setAppointmentDate(jTextField7.getText());
-            a.setAppointmentTime(jTextField8.getText());
+            a.setAppointmentNo(Integer.parseInt(jTextField1.getText().trim()));
+            a.setPatientName(jTextField2.getText().trim());
+            a.setAddress(jTextField3.getText().trim());
+            a.setContactNo(jTextField4.getText().trim());
+            a.setDentistName(jTextField5.getText().trim());
+            a.setTreatmentType("Not Selected");
+            a.setAppointmentDate(jTextField7.getText().trim());
+            a.setAppointmentTime(jTextField8.getText().trim());
 
             AppointmentDAO dao = new AppointmentDAO();
 
@@ -605,12 +533,9 @@ public class AppointmentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_BackbtnMouseExited
 
     private void BackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbtnActionPerformed
-        try {
-            new MenuForm().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(AppointmentForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new StaffForm().setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_BackbtnActionPerformed
 
     private void ClearbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearbtnMouseEntered
@@ -708,7 +633,6 @@ public class AppointmentForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -716,11 +640,6 @@ public class AppointmentForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -730,40 +649,6 @@ public class AppointmentForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
-    private void setAppointmentNo(int parseInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setPatientName(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setAddress(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setContactNo(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setDentistName(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setTreatmentType(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setAppointmentDate(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setAppointmentTime(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void getAppointments() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
 }

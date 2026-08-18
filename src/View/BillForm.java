@@ -512,12 +512,7 @@ public class BillForm extends javax.swing.JFrame {
     }//GEN-LAST:event_BillbtnMouseExited
 
     private void BillbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillbtnActionPerformed
-        try {
-            // TODO add your handling code here:
-            new MenuForm().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(BillForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+         new StaffForm().setVisible(true);
         dispose();
     }//GEN-LAST:event_BillbtnActionPerformed
 

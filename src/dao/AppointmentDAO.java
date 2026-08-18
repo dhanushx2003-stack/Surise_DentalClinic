@@ -34,12 +34,27 @@ public class AppointmentDAO {
         ps.setString(3, a.getAddress());
         ps.setString(4, a.getContactNo());
         ps.setString(5, a.getDentistName());
-        ps.setString(6, a.getTreatmentType());
+        ps.setString(6, "Not Selected");
         ps.setString(7, a.getAppointmentDate());
         ps.setString(8, a.getAppointmentTime());
 
         return ps.executeUpdate() > 0;
 
+    }
+    
+    public boolean UpdateTreatment(int AppointmentNo, String TreatmentType)
+            throws SQLException{
+        
+        Connection con = DBConnection.getConnection();
+        
+        String sql = "UPDATE appointment SET TreatmentType = ?" + "WHERE AppointmentNo = ?";
+        
+        PreparedStatement ps = con.prepareStatement(sql);
+        
+        ps.setString(1, TreatmentType);
+        ps.setInt(2, AppointmentNo);
+        
+        return ps.executeUpdate() > 0;
     }
 
     public ResultSet getAllAppointments() {

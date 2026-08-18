@@ -253,6 +253,19 @@ public class LoginForm extends javax.swing.JFrame {
             dispose();
 
         }
+        
+        else if (role.equalsIgnoreCase("Staff")) {
+
+            JOptionPane.showMessageDialog(
+                this,
+                "Staff Login Sucessful"
+            );
+
+            new StaffForm().setVisible(true);
+            dispose();
+
+        }
+        
 
         else if (role.equalsIgnoreCase("Patient")) {
 

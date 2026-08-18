@@ -22,19 +22,18 @@ public class DisplayDoctor extends javax.swing.JFrame {
      */
     public DisplayDoctor() {
         initComponents();
-        
+
         Table1.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 14));
         Table1.getColumnModel().getColumn(0).setPreferredWidth(120);
         Table1.getColumnModel().getColumn(3).setPreferredWidth(100);
         Table1.getColumnModel().getColumn(5).setPreferredWidth(100);
         Table1.getColumnModel().getColumn(6).setPreferredWidth(105);
         Table1.getColumnModel().getColumn(7).setPreferredWidth(105);
-        
 
         displayAppointment();
     }
 
-        public void displayAppointment() {
+    public void displayAppointment() {
 
         try {
 
@@ -60,7 +59,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+
     }
 
     /**
@@ -81,6 +80,9 @@ public class DisplayDoctor extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Logoutbtn = new javax.swing.JButton();
         Searchbtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        Viewbtn2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -158,32 +160,63 @@ public class DisplayDoctor extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel3.setText("Select Treatment Type");
+
+        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Root Canal", "Extraction", "Dental Implants", "Cleaning", "Whitening" }));
+
+        Viewbtn2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Viewbtn2.setText("Update");
+        Viewbtn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Viewbtn2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Viewbtn2MouseExited(evt);
+            }
+        });
+        Viewbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Viewbtn2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(jLabel2)
-                .addGap(37, 37, 37)
-                .addComponent(Logoutbtn)
-                .addGap(32, 32, 32))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(Searchbtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(Viewbtn))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 990, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel2)
+                        .addGap(37, 37, 37)
+                        .addComponent(Logoutbtn)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(Searchbtn)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(Viewbtn))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 990, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(79, 79, 79)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(Viewbtn2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +227,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(Logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Searchbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,7 +235,13 @@ public class DisplayDoctor extends javax.swing.JFrame {
                 .addComponent(Viewbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(Viewbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -248,7 +287,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
         // TODO add your handling code here:
         int Option = JOptionPane.showConfirmDialog(this, "Logout Sunrise Dental Clinic?", "Logout Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        if(Option == JOptionPane.YES_OPTION){
+        if (Option == JOptionPane.YES_OPTION) {
             LoginForm login = new LoginForm();
             login.setVisible(true);
             dispose();
@@ -269,61 +308,98 @@ public class DisplayDoctor extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try {
-        String DentistName = jTextField.getText().trim();
+            String DentistName = jTextField.getText().trim();
 
-        if (DentistName.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Enter Dentist Name");
-            return;
-        }
+            if (DentistName.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Enter Dentist Name");
+                return;
+            }
 
-        AppointmentDAO dao = new AppointmentDAO();
+            AppointmentDAO dao = new AppointmentDAO();
 
-        ResultSet rs = dao.searchDentistName(DentistName);
+            ResultSet rs = dao.searchDentistName(DentistName);
 
-        DefaultTableModel model =
-                (DefaultTableModel) Table1.getModel();
+            DefaultTableModel model
+                    = (DefaultTableModel) Table1.getModel();
 
-        model.setRowCount(0);
+            model.setRowCount(0);
 
-        boolean found = false;
+            boolean found = false;
 
-        while (rs.next()) {
+            while (rs.next()) {
 
-            found = true;
+                found = true;
 
-            model.addRow(new Object[]{
-                rs.getInt("AppointmentNo"),
-                rs.getString("PatientName"),
-                rs.getString("Address"),
-                rs.getString("ContactNo"),
-                rs.getString("DentistName"),
-                rs.getString("TreatmentType"),
-                rs.getDate("AppointmentDate"),
-                rs.getString("AppointmentTime")
-            });
-        }
+                model.addRow(new Object[]{
+                    rs.getInt("AppointmentNo"),
+                    rs.getString("PatientName"),
+                    rs.getString("Address"),
+                    rs.getString("ContactNo"),
+                    rs.getString("DentistName"),
+                    rs.getString("TreatmentType"),
+                    rs.getDate("AppointmentDate"),
+                    rs.getString("AppointmentTime")
+                });
+            }
 
-        if (!found) {
+            if (!found) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "No Appointments Found"
+                );
+            }
+
+        } catch (Exception e) {
+
             JOptionPane.showMessageDialog(
                     this,
-                    "No Appointments Found"
+                    "Error: " + e.getMessage()
             );
+
+            e.printStackTrace();
         }
-
-    } catch (Exception e) {
-
-        JOptionPane.showMessageDialog(
-                this,
-                "Error: " + e.getMessage()
-        );
-
-        e.printStackTrace();
-    }
     }//GEN-LAST:event_SearchbtnActionPerformed
 
+    private void Viewbtn2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Viewbtn2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Viewbtn2MouseEntered
+
+    private void Viewbtn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Viewbtn2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Viewbtn2MouseExited
+
+    private void Viewbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Viewbtn2ActionPerformed
+        // TODO add your handling code here:
+        int SelectedRow = Table1.getSelectedRow();
+
+        if (SelectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Select an appointment");
+        
+        return;
+    }
+    int AppointmentNo = Integer.parseInt(Table1.getValueAt(SelectedRow, 0).toString());
+
+    String TreatmentType = jComboBox1.getSelectedItem().toString();
+
+    
+        try{
+    AppointmentDAO dao = new AppointmentDAO();
+        boolean Updated = dao.UpdateTreatment(AppointmentNo, TreatmentType);
+
+        if (Updated) {
+            JOptionPane.showMessageDialog(this, "Treatment Type Updated");
+            displayAppointment();
+        }else {
+            JOptionPane.showMessageDialog(this, "Update Failed");
+        }
+} catch (Exception e){
+    JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+}
+    }//GEN-LAST:event_Viewbtn2ActionPerformed
+
     /**
-     * @param args the command line arguments
-     */
+         * @param args the command line arguments
+         */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -361,8 +437,11 @@ public class DisplayDoctor extends javax.swing.JFrame {
     private javax.swing.JButton Searchbtn;
     private javax.swing.JTable Table1;
     private javax.swing.JButton Viewbtn;
+    private javax.swing.JButton Viewbtn2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField;

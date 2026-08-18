@@ -37,6 +37,9 @@ public class StaffDAO {
             System.out.println("Role: " + staff.getRole());
 
             int result = ps.executeUpdate();
+            
+            ps.close();
+            con.close();
 
             return result > 0;
 
@@ -70,9 +73,17 @@ public class StaffDAO {
 
             System.out.println("Username = [" + Username + "]");
             System.out.println("Role = [" + role + "]");
+            
+            rs.close();
+            ps.close();
+            con.close();
 
             return role;
         }
+        
+          rs.close();
+            ps.close();
+            con.close();
 
     } catch (Exception e) {
 
@@ -114,12 +125,18 @@ public class StaffDAO {
             ps.setString(4, "ADMIN");
 
             ps.executeUpdate();
+            
+            ps.close();
 
             System.out.println(
                     "Admin account created."
             );
 
         }
+        
+        rs.close();
+        check.close();
+        con.close();
 
     } catch (Exception e) {
 
