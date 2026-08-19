@@ -23,6 +23,8 @@ public class DentistForm extends javax.swing.JFrame {
      */
     public DentistForm() {
         initComponents();
+        
+        setLocation(500,150);
     }
 
     /**

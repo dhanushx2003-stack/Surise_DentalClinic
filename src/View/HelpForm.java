@@ -20,6 +20,8 @@ public class HelpForm extends javax.swing.JFrame {
      */
     public HelpForm() {
         initComponents();
+        
+        setLocation(200,165);
     }
 
     /**
@@ -64,7 +66,7 @@ public class HelpForm extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Staff has to get registered and login with the correct Username and Password   \n\n2. After login, Staff can register new paitents' appointments by clicking on Register New Appointment \n\n3. Staff view patients' appointment details using their appointment numbers before clicking on Display Appointment Details \n\n4. After clicking Calculate and Print Bill, Satff can print the treatment bill by calculating the total cost witht the treatment cost and consultation fee\n \n5. Staff can find out how to use Sunrise Dental Clinic system by clicking on Help Section \n\n6. Finally, Staff can exit Sunrise Dental Clinic by clicking on Exit System\n");
+        jTextArea1.setText("1. Staff has to get registered and login with the correct Username and Password   \n\n2. After login, Staff can register new paitents' appointments by clicking on Register New Appointment \n\n3. Staff view patients' appointment details using their appointment numbers before clicking on Display Appointment Details \n\n4. After clicking Calculate and Print Bill, Satff can print the treatment bill by calculating the total cost witht the treatment cost and consultation fee\n \n5. Staff can find out how to use Sunrise Dental Clinic system by clicking on Help Section \n\n6. Finally, Staff can logout of  Sunrise Dental Clinic by clicking on the Logout button\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -77,23 +79,23 @@ public class HelpForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
+                        .addGap(402, 402, 402)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(419, 419, 419)
+                        .addGap(491, 491, 491)
                         .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
+                .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

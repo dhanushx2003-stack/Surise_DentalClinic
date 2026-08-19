@@ -23,6 +23,8 @@ public class DisplayPatient extends javax.swing.JFrame {
     public DisplayPatient() {
         initComponents();
         
+        setLocation(240, 150);
+        
           Table.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 14));
         Table.getColumnModel().getColumn(0).setPreferredWidth(120);
         Table.getColumnModel().getColumn(3).setPreferredWidth(100);

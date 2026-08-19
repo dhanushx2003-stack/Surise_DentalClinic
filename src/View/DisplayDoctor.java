@@ -4,6 +4,7 @@
  */
 package View;
 
+import Model.Appointment;
 import dao.AppointmentDAO;
 import java.awt.Color;
 import java.awt.Font;
@@ -22,6 +23,8 @@ public class DisplayDoctor extends javax.swing.JFrame {
      */
     public DisplayDoctor() {
         initComponents();
+        
+        setLocation(220, 50);
 
         Table1.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 14));
         Table1.getColumnModel().getColumn(0).setPreferredWidth(120);
@@ -126,7 +129,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
         jLabel1.setText("Patient Appointment Details");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel2.setText("Welcome, Doctor");
+        jLabel2.setText("Welcome, Dentist");
 
         Logoutbtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Logoutbtn.setText("Logout");
@@ -387,6 +390,10 @@ public class DisplayDoctor extends javax.swing.JFrame {
         boolean Updated = dao.UpdateTreatment(AppointmentNo, TreatmentType);
 
         if (Updated) {
+            Appointment a = dao.getAppoitmentByNo(AppointmentNo);
+            if (a != null){
+                dao.SaveToFile(a);
+            }
             JOptionPane.showMessageDialog(this, "Treatment Type Updated");
             displayAppointment();
         }else {

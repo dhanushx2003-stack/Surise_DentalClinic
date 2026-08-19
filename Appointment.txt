@@ -152,3 +152,30 @@ Treatment Type: Not Selected
 Appointment Date: 2026-05-22
 Appointment Time: 10:00 AM
 ----------------------------------------------
+Appointment Number: 128
+Patient Name: 04:00 PM
+Address: null
+Contact Number: null
+Dentist Name: null
+Treatment Type: null
+Appointment Date: null
+Appointment Time: null
+----------------------------------------------
+Appointment Number: 128
+Patient Name: Dr. Wilson
+Address: Moratuwa
+Contact Number: 07741784512
+Dentist Name: null
+Treatment Type: Extraction
+Appointment Date: 2026-02-20
+Appointment Time: 04:00 PM
+----------------------------------------------
+Appointment Number: 128
+Patient Name: Shankar Ramasamay
+Address: Moratuwa
+Contact Number: 07741784512
+Dentist Name: Dr. Wilson
+Treatment Type: Whitening
+Appointment Date: 2026-02-20
+Appointment Time: 04:00 PM
+----------------------------------------------

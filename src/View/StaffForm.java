@@ -18,6 +18,8 @@ public class StaffForm extends javax.swing.JFrame {
      */
     public StaffForm() {
         initComponents();
+        
+        setLocation(100, 100);
     }
 
     /**

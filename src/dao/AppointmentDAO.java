@@ -116,6 +116,36 @@ public class AppointmentDAO {
 
     return rs;
     }
+     
+     public Appointment getAppoitmentByNo(int AppointmentNo)throws SQLException{
+         
+         Connection con = DBConnection.getConnection();
+         
+         String sql = "SELECT * FROM appointment WHERE AppointmentNo=?";
+         
+         PreparedStatement ps = con.prepareStatement(sql);
+         ps.setInt(1, AppointmentNo);
+         
+         ResultSet rs = ps.executeQuery();
+         
+         if (rs.next()){
+             
+             Appointment a = new Appointment();
+             
+             a.setAppointmentNo(rs.getInt("AppointmentNo"));
+             a.setPatientName(rs.getString("PatientName"));
+             a.setAddress(rs.getString("Address"));
+             a.setContactNo(rs.getString("ContactNo"));
+             a.setDentistName(rs.getString("DentistName"));
+             a.setTreatmentType(rs.getString("TreatmentType"));
+             a.setAppointmentDate(rs.getString("AppointmentDate"));
+             a.setAppointmentTime(rs.getString("AppointmentTime"));
+             
+             return a;
+         }
+         
+         return null;
+     }
 
     public void SaveToFile(Appointment a) throws IOException {
 

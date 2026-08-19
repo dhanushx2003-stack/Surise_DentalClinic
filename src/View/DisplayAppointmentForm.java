@@ -27,6 +27,8 @@ public class DisplayAppointmentForm extends javax.swing.JFrame {
     public DisplayAppointmentForm() {
         initComponents();
         
+        setLocation(230,150);
+        
         jTable1.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 14));
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(120);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(100);
