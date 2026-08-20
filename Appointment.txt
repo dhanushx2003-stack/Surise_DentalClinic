@@ -179,3 +179,21 @@ Treatment Type: Whitening
 Appointment Date: 2026-02-20
 Appointment Time: 04:00 PM
 ----------------------------------------------
+Appointment Number: 129
+Patient Name: Raj Gandhi
+Address: Thaladuwa
+Contact Number: 0772532145
+Dentist Name: Dr. Joseph
+Treatment Type: Extraction
+Appointment Date: 2026-12-01
+Appointment Time: 05:00 AM
+----------------------------------------------
+Appointment Number: 129
+Patient Name: Raj Gandhi
+Address: Thaladuwa
+Contact Number: 0772532145
+Dentist Name: Dr. Joseph
+Treatment Type: Tooth Extraction
+Appointment Date: 2026-12-01
+Appointment Time: 05:00 AM
+----------------------------------------------

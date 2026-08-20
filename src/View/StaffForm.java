@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class StaffForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form StaffForm
+     * Creates new form NewJFrame
      */
     public StaffForm() {
         initComponents();
@@ -51,7 +51,6 @@ public class StaffForm extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,7 +128,7 @@ public class StaffForm extends javax.swing.JFrame {
         });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton3jButton2ActionPerformed(evt);
             }
         });
 
@@ -326,10 +325,31 @@ public class StaffForm extends javax.swing.JFrame {
                     .addContainerGap(315, Short.MAX_VALUE)))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 590));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Logoutbtn3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logoutbtn3MouseEntered
+        // TODO add your handling code here:
+        Logoutbtn3.setBackground(Color.RED);
+    }//GEN-LAST:event_Logoutbtn3MouseEntered
+
+    private void Logoutbtn3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logoutbtn3MouseExited
+        // TODO add your handling code here:
+        Logoutbtn3.setBackground(Color.WHITE);
+    }//GEN-LAST:event_Logoutbtn3MouseExited
 
     private void Logoutbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logoutbtn3ActionPerformed
         // TODO add your handling code here:
@@ -342,23 +362,6 @@ public class StaffForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Logoutbtn3ActionPerformed
 
-    private void Logoutbtn3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logoutbtn3MouseExited
-        // TODO add your handling code here:
-        Logoutbtn3.setBackground(Color.WHITE);
-    }//GEN-LAST:event_Logoutbtn3MouseExited
-
-    private void Logoutbtn3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logoutbtn3MouseEntered
-        // TODO add your handling code here:
-        Logoutbtn3.setBackground(Color.RED);
-    }//GEN-LAST:event_Logoutbtn3MouseEntered
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-         new BillForm().setVisible(true);
-        dispose();
-         
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
         jButton3.setBackground(Color.RED);
@@ -368,6 +371,13 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         jButton3.setBackground(Color.white);
     }//GEN-LAST:event_jButton3MouseExited
+
+    private void jButton3jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3jButton2ActionPerformed
+        // TODO add your handling code here:
+        new BillForm().setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButton3jButton2ActionPerformed
 
     private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
         // TODO add your handling code here:
@@ -381,7 +391,7 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void jButton4jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4jButton2ActionPerformed
         // TODO add your handling code here:
-         new AppointmentForm().setVisible(true);
+        new AppointmentForm().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4jButton2ActionPerformed
 
@@ -443,6 +453,7 @@ public class StaffForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StaffForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -472,8 +483,4 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
-
-    private void scaleImage() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

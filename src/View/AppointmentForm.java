@@ -21,7 +21,6 @@ import java.io.IOException;
  */
 public class AppointmentForm extends javax.swing.JFrame {
 
- 
     private String Treatment;
 
     /**
@@ -29,11 +28,10 @@ public class AppointmentForm extends javax.swing.JFrame {
      */
     public AppointmentForm() {
         initComponents();
-        
-        setSize(700, 650);
-        setLocation(400,100);
 
-       
+        setSize(700, 650);
+        setLocation(400, 100);
+
     }
 
     /**
@@ -61,7 +59,6 @@ public class AppointmentForm extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
@@ -77,6 +74,7 @@ public class AppointmentForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -220,8 +218,6 @@ public class AppointmentForm extends javax.swing.JFrame {
                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
-        setPreferredSize(new java.awt.Dimension(567, 538));
-
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -229,13 +225,6 @@ public class AppointmentForm extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setText("Address");
-
-        jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel5.setText("Contact Number");
@@ -326,6 +315,9 @@ public class AppointmentForm extends javax.swing.JFrame {
             }
         });
 
+        jComboBox2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Ranjan", "Dr. Marian", "Dr. Wilson", "Dr. Joseph", "Dr. Christine" }));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -351,9 +343,9 @@ public class AppointmentForm extends javax.swing.JFrame {
                             .addComponent(jTextField4)
                             .addComponent(jTextField3)
                             .addComponent(jTextField2)
-                            .addComponent(jTextField5)
                             .addComponent(jTextField7)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -390,9 +382,9 @@ public class AppointmentForm extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(14, 14, 14)
+                    .addComponent(jLabel6)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -483,18 +475,17 @@ public class AppointmentForm extends javax.swing.JFrame {
         try {
 
             if (jTextField1.getText().trim().isEmpty()
-                || jTextField2.getText().trim().isEmpty()
-                || jTextField3.getText().trim().isEmpty()
-                || jTextField4.getText().trim().isEmpty()
-                || jTextField5.getText().trim().isEmpty()
-                || jTextField7.getText().trim().isEmpty()
-                || jTextField8.getText().trim().isEmpty()){
+                    || jTextField2.getText().trim().isEmpty()
+                    || jTextField3.getText().trim().isEmpty()
+                    || jTextField4.getText().trim().isEmpty()
+                    || jComboBox2.getSelectedItem() == null
+                    || jComboBox2.getSelectedItem().toString().trim().isEmpty()
+                    || jTextField7.getText().trim().isEmpty()
+                    || jTextField8.getText().trim().isEmpty()) {
 
                 JOptionPane.showMessageDialog(this, "Add the details");
                 return;
             }
-
-          
 
             Appointment a = new Appointment();
 
@@ -502,7 +493,7 @@ public class AppointmentForm extends javax.swing.JFrame {
             a.setPatientName(jTextField2.getText().trim());
             a.setAddress(jTextField3.getText().trim());
             a.setContactNo(jTextField4.getText().trim());
-            a.setDentistName(jTextField5.getText().trim());
+            a.setDentistName(jComboBox2.getSelectedItem().toString());
             a.setTreatmentType("Not Selected");
             a.setAppointmentDate(jTextField7.getText().trim());
             a.setAppointmentTime(jTextField8.getText().trim());
@@ -510,16 +501,15 @@ public class AppointmentForm extends javax.swing.JFrame {
             AppointmentDAO dao = new AppointmentDAO();
 
             if (dao.AddAppointment(a)) {
-                
+
                 JOptionPane.showMessageDialog(this, "Patient Registered");
             } else {
                 JOptionPane.showMessageDialog(this, "Appointment Failed to Register");
             }
 
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Appointment number should be a number");
-        }
-         catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(AppointmentForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_AddbtnActionPerformed
@@ -537,7 +527,7 @@ public class AppointmentForm extends javax.swing.JFrame {
     private void BackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbtnActionPerformed
         new StaffForm().setVisible(true);
         dispose();
-        
+
     }//GEN-LAST:event_BackbtnActionPerformed
 
     private void ClearbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearbtnMouseEntered
@@ -556,7 +546,7 @@ public class AppointmentForm extends javax.swing.JFrame {
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
-        jTextField5.setText("");
+        jComboBox2.setSelectedItem(0);
         jTextField7.setText("");
         jTextField8.setText("");
         buttonGroup1.clearSelection();
@@ -569,10 +559,6 @@ public class AppointmentForm extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -631,6 +617,7 @@ public class AppointmentForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -650,11 +637,8 @@ public class AppointmentForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
-
-    
 
 }

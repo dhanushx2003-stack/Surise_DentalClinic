@@ -167,7 +167,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
         jLabel3.setText("Select Treatment Type");
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Root Canal", "Extraction", "Dental Implants", "Cleaning", "Whitening" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Root Canal", "Tooth Extraction", "Dental Implants", "Cleaning", "Whitening" }));
 
         Viewbtn2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Viewbtn2.setText("Update");

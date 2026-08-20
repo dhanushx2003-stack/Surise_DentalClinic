@@ -234,9 +234,9 @@ public class DisplayPatient extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try {
-            int AppointmentNo = Integer.parseInt(jTextField1.getText().trim());
+            String PatientName = (jTextField1.getText().trim());
             AppointmentDAO dao = new AppointmentDAO();
-            ResultSet rs = dao.searchAppointment(AppointmentNo);
+            ResultSet rs = dao.searchPatient(PatientName);
 
             DefaultTableModel model = (DefaultTableModel) Table.getModel();
 

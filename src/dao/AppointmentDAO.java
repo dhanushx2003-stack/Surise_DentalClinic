@@ -95,6 +95,17 @@ public class AppointmentDAO {
         return rs;
     }
     
+    public ResultSet searchPatient(String PatientName) throws SQLException{
+        
+        Connection con = DBConnection.getConnection();
+        String sql = "SELECT * FROM appointment WHERE PatientName = ?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, PatientName);
+        
+        return ps.executeQuery();
+        
+    }
+    
      public ResultSet searchDentistName(String DentistName) {
 
       ResultSet rs = null;
