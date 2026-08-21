@@ -270,7 +270,7 @@ public class LoginForm extends javax.swing.JFrame {
                 "Patient Login Sucessful"
             );
 
-            new DisplayPatient().setVisible(true);
+            new Patient().setVisible(true);
             dispose();
 
         }

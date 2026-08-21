@@ -22,7 +22,7 @@ public class DBConnection {
             Class.forName("com.mysql.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/sunrise_dentalclinic",
+                    "jdbc:mysql://localhost:3306/sunrise_dentalclinic?useSSL=false",
                     "root",
                     ""
             );
