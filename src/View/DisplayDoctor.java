@@ -33,7 +33,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
         Table1.getColumnModel().getColumn(6).setPreferredWidth(105);
         Table1.getColumnModel().getColumn(7).setPreferredWidth(105);
 
-        displayAppointment();
+       displayAppointment();
     }
 
     public void displayAppointment() {
@@ -394,7 +394,7 @@ public class DisplayDoctor extends javax.swing.JFrame {
             if (a != null){
                 dao.SaveToFile(a);
             }
-            JOptionPane.showMessageDialog(this, "Treatment Type Updated");
+            JOptionPane.showMessageDialog(this, "Appointment Updated");
             displayAppointment();
         }else {
             JOptionPane.showMessageDialog(this, "Update Failed");

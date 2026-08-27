@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.RegistrationController;
 import Model.Staff;
 import dao.StaffDAO;
 import java.awt.Color;
@@ -21,12 +22,9 @@ public class RegisterForm extends javax.swing.JFrame {
     public RegisterForm() {
         initComponents();
         
-        setLocation(500,150);
+       setLocation(500,200);
         
-        
-        jComboBox1.removeAllItems();
-        jComboBox1.addItem("Patient");
-        jComboBox1.addItem("Staff");
+       
     }
 
     /**
@@ -43,7 +41,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         Backbtn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jTextField2 = new javax.swing.JTextField();
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
@@ -52,7 +49,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Loginbtn2 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -61,6 +57,7 @@ public class RegisterForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(422, 385));
 
         jPasswordField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -87,9 +84,6 @@ public class RegisterForm extends javax.swing.JFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Staff" }));
 
         jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -137,9 +131,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Enter Password");
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel7.setText("Sign in as");
-
         Loginbtn2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Loginbtn2.setText("Clear");
         Loginbtn2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,31 +163,25 @@ public class RegisterForm extends javax.swing.JFrame {
                         .addGap(274, 274, 274))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel6))
-                                .addGap(57, 57, 57))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField1)
                             .addComponent(jPasswordField1)
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(Registerbtn)
-                .addGap(35, 35, 35)
+                .addGap(54, 54, 54)
                 .addComponent(Loginbtn2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Backbtn)
-                .addGap(71, 71, 71))
+                .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,29 +204,23 @@ public class RegisterForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Registerbtn)
                     .addComponent(Backbtn)
                     .addComponent(Loginbtn2))
-                .addGap(41, 41, 41))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
 
         pack();
@@ -253,7 +232,50 @@ public class RegisterForm extends javax.swing.JFrame {
         String username = jTextField1.getText().trim();
         String password = String.valueOf(jPasswordField1.getPassword());
         String confirmPassword = String.valueOf(jPasswordField2.getPassword());
-        String role = jComboBox1.getSelectedItem().toString();
+        
+        RegistrationController controller = new RegistrationController();
+        
+        String result = controller.Register(name, username, password, confirmPassword);
+        
+        if (result.equals("Enter Name")){
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            
+            return;
+        }
+        
+        if (result.equals("Enter Username")){
+            JOptionPane.showMessageDialog(this, "Enter Username");
+            
+            return;
+        }
+        
+        if (result.equals("Enter Password")){
+            JOptionPane.showMessageDialog(this, "Enter Password");
+            
+            return;
+        }
+        
+        if (result.equals("Enter Confirm Password")){
+            JOptionPane.showMessageDialog(this, "Enter Confirm Password");
+            
+            return;
+        }
+        
+        if (result.equals("Passwords do not match")){
+            JOptionPane.showMessageDialog(this, "Enter Confirm Password");
+            
+            return;
+        }
+        
+        if (result.equals("Registration Successful")){
+            JOptionPane.showMessageDialog(this, "Registration Successful");
+            
+            new LoginForm().setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Registration Failed");
+        }
+       
 
         if(username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
             JOptionPane.showMessageDialog(this, "Fill the details");
@@ -272,7 +294,8 @@ public class RegisterForm extends javax.swing.JFrame {
         s.setName(name);
         s.setUsername(username);
         s.setPassword(password);
-        s.setRole(role);
+        
+        s.setRole("Staff");
 
         StaffDAO dao = new StaffDAO();
 
@@ -384,14 +407,12 @@ public class RegisterForm extends javax.swing.JFrame {
     private javax.swing.JButton Backbtn;
     private javax.swing.JButton Loginbtn2;
     private javax.swing.JButton Registerbtn;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;

@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.ExitSystemController;
 import Model.Appointment;
 import dao.AppointmentDAO;
 import db.DBConnection;
@@ -509,7 +510,11 @@ public class MenuForm extends javax.swing.JFrame {
         int Option = JOptionPane.showConfirmDialog(this, "Exit Sunrise Dental Clinic?", "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         
         if(Option == JOptionPane.YES_OPTION){
+            ExitSystemController controller = new ExitSystemController();
+            String Result = controller.ExitSystem();
+            if(Result.equals("Sunrise Dental Clinic System Closed")){
             System.exit(0);
+            }
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 

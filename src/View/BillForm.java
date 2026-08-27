@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.BillController;
 import dao.AppointmentDAO;
 import java.awt.Color;
 import java.awt.Font;
@@ -22,6 +23,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+
 
 
 
@@ -412,6 +414,15 @@ public class BillForm extends javax.swing.JFrame {
 
     private void SearchbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchbtnActionPerformed
         // TODO add your handling code here:
+        String Appointmentumber = jTextField1.getText();
+        BillController controller = new BillController();
+        String Validation = controller.ValidateAppointmentNumber(Appointmentumber);
+        
+        if(!Validation.equals("Valid Appointment Number")){
+            JOptionPane.showMessageDialog(this, Validation);
+            return;
+        }
+      
         int AppointmentNo = Integer.parseInt(jTextField1.getText());
         AppointmentDAO dao = new AppointmentDAO();
         ResultSet rs = dao.searchAppointment(AppointmentNo);

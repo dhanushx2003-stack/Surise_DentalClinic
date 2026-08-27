@@ -4,12 +4,14 @@
  */
 package View;
 
+import Controller.LoginController;
 import dao.StaffDAO;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -26,6 +28,7 @@ public class LoginForm extends javax.swing.JFrame {
         setLocation(500,200);
 
         StaffDAO dao = new StaffDAO();
+       
         dao.Admin();
     }
 
@@ -189,99 +192,96 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
         // TODO add your handling code here:
-        String Username = jTextField1.getText();
-        String Password = String.valueOf(jPasswordField1.getPassword());
+       String Username = jTextField1.getText().trim();
+    String Password = String.valueOf(jPasswordField1.getPassword());
 
-        if (Username.isEmpty() || Password.isEmpty()) {
+    LoginController controller = new LoginController();
 
-            JOptionPane.showMessageDialog(
-                this,
-                "Fill the details"
-            );
+    String result = controller.login(Username, Password);
 
-            return;
-        }
+    System.out.println("LOGIN RESULT = [" + result + "]");
 
-        StaffDAO dao = new StaffDAO();
+    // Validation messages
+    if ("Username is required".equals(result)) {
+        JOptionPane.showMessageDialog(this, "Username is required");
+        return;
+    }
 
-        String role = dao.login(Username, Password);
+    if ("Password is required".equals(result)) {
+        JOptionPane.showMessageDialog(this, "Password is required");
+        return;
+    }
 
-        if (role == null) {
+    if ("Username must contain at least 3 characters".equals(result)) {
+        JOptionPane.showMessageDialog(this,
+                "Username must contain at least 3 characters");
+        return;
+    }
 
-            JOptionPane.showMessageDialog(
-                this,
-                "Invalid Login"
-            );
+    if ("Password must contain at least 3 characters".equals(result)) {
+        JOptionPane.showMessageDialog(this,
+                "Password must contain at least 3 characters");
+        return;
+    }
 
-            return;
-        }
+    // Wrong username/password
+    if ("INVALID_CREDENTIALS".equals(result)) {
+        JOptionPane.showMessageDialog(this, "Invalid Login");
+        return;
+    }
 
-        role = role.trim();
+    // ADMIN
+    if ("LOGIN_SUCCESS_ADMIN".equals(result)) {
 
-        System.out.println("LOGIN SUCCESS");
-        System.out.println("Username = [" + Username + "]");
-        System.out.println("Role = [" + role + "]");
+        JOptionPane.showMessageDialog(this, "Admin Login Successful");
 
-        if (role.equalsIgnoreCase("ADMIN")) {
-
-            JOptionPane.showMessageDialog(
-                this,
-                "Admin Login Successful"
-            );
-
-            try {
-                new MenuForm().setVisible(true);
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            MenuForm menu = new MenuForm();
+            menu.setVisible(true);
             dispose();
 
-        }
-
-        else if (role.equalsIgnoreCase("Dentist")) {
+        } catch (Exception ex) {
+            ex.printStackTrace();
 
             JOptionPane.showMessageDialog(
-                this,
-                "Dentist Login Sucessful"
+                    this,
+                    "Error opening MenuForm: " + ex.getMessage()
             );
+        }
 
-            new DisplayDoctor().setVisible(true);
+    }
+
+    // DENTIST
+    else if ("LOGIN_SUCCESS_Dentist".equals(result)) {
+
+        JOptionPane.showMessageDialog(this, "Dentist Login Successful");
+
+        try {
+            DisplayDoctor dentist = new DisplayDoctor();
+            dentist.setVisible(true);
             dispose();
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Error opening DisplayDoctor: " + ex.getMessage()
+            );
         }
+
         
-        else if (role.equalsIgnoreCase("Staff")) {
+    }
 
-            JOptionPane.showMessageDialog(
-                this,
-                "Staff Login Sucessful"
-            );
+    // STAFF
+    else if ("LOGIN_SUCCESS_Staff".equals(result)) {
 
-            new StaffForm().setVisible(true);
-            dispose();
+    JOptionPane.showMessageDialog(this, "Staff Login Successful");
 
-        }
-        
-
-        else if (role.equalsIgnoreCase("Patient")) {
-
-            JOptionPane.showMessageDialog(
-                this,
-                "Patient Login Sucessful"
-            );
-
-            new Patient().setVisible(true);
-            dispose();
-
-        }
-
-        else {
-
-            JOptionPane.showMessageDialog(
-                this,
-                "Unknown role: [" + role + "]"
-            );
-        }
+    StaffForm staff = new StaffForm();
+    staff.setVisible(true);
+    dispose();
+}
     }//GEN-LAST:event_LoginbtnActionPerformed
 
     private void SignbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignbtnActionPerformed

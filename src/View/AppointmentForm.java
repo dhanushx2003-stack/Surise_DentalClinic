@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.AppointmentController;
 import dao.AppointmentDAO;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -472,46 +473,37 @@ public class AppointmentForm extends javax.swing.JFrame {
 
     private void AddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbtnActionPerformed
         // TODO add your handling code here:
-        try {
-
-            if (jTextField1.getText().trim().isEmpty()
-                    || jTextField2.getText().trim().isEmpty()
-                    || jTextField3.getText().trim().isEmpty()
-                    || jTextField4.getText().trim().isEmpty()
-                    || jComboBox2.getSelectedItem() == null
-                    || jComboBox2.getSelectedItem().toString().trim().isEmpty()
-                    || jTextField7.getText().trim().isEmpty()
-                    || jTextField8.getText().trim().isEmpty()) {
-
-                JOptionPane.showMessageDialog(this, "Add the details");
-                return;
-            }
-
-            Appointment a = new Appointment();
-
-            a.setAppointmentNo(Integer.parseInt(jTextField1.getText().trim()));
-            a.setPatientName(jTextField2.getText().trim());
-            a.setAddress(jTextField3.getText().trim());
-            a.setContactNo(jTextField4.getText().trim());
-            a.setDentistName(jComboBox2.getSelectedItem().toString());
-            a.setTreatmentType("Not Selected");
-            a.setAppointmentDate(jTextField7.getText().trim());
-            a.setAppointmentTime(jTextField8.getText().trim());
-
-            AppointmentDAO dao = new AppointmentDAO();
-
-            if (dao.AddAppointment(a)) {
-
-                JOptionPane.showMessageDialog(this, "Patient Registered");
-            } else {
-                JOptionPane.showMessageDialog(this, "Appointment Failed to Register");
-            }
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Appointment number should be a number");
-        } catch (SQLException ex) {
-            Logger.getLogger(AppointmentForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+      String AppointmentNo = jTextField1.getText();
+      String PatientName = jTextField2.getText();
+      String Address = jTextField3.getText();
+      String ContactNo = jTextField4.getText();
+      String DentistName = jComboBox2.getSelectedItem().toString();
+      String AppointmentDate = jTextField7.getText();
+      String AppointmentTime = jTextField8.getText();
+      
+      AppointmentController controller = new AppointmentController();
+      
+      String result = controller.RegisterAppointment(AppointmentNo, PatientName, Address, ContactNo, DentistName, AppointmentDate, AppointmentTime);
+      
+      switch (result){
+          case "Empty Fields": JOptionPane.showMessageDialog(this, "Add the details");
+          break;
+          
+          case "Invalid Appointment Number": JOptionPane.showMessageDialog(this, "Appointment number must be a number");
+          break;
+          
+          case "Duplicate Appointment Number": JOptionPane.showMessageDialog(this, "Appointment number already registered");
+          break;
+          
+          case "Patient Registered": JOptionPane.showMessageDialog(this, "Patient Registered");
+          break;
+          
+          case "Failed Registration": JOptionPane.showMessageDialog(this, "Appointment Failed to Register");
+          break;
+          
+          case "Databse Error": JOptionPane.showMessageDialog(this, "Database Error");
+          break;
+      }
     }//GEN-LAST:event_AddbtnActionPerformed
 
     private void BackbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackbtnMouseEntered
