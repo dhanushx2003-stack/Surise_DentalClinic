@@ -201,7 +201,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     System.out.println("LOGIN RESULT = [" + result + "]");
 
-    // Validation messages
+   
     if ("Username is required".equals(result)) {
         JOptionPane.showMessageDialog(this, "Username is required");
         return;
@@ -224,13 +224,13 @@ public class LoginForm extends javax.swing.JFrame {
         return;
     }
 
-    // Wrong username/password
+    
     if ("INVALID_CREDENTIALS".equals(result)) {
-        JOptionPane.showMessageDialog(this, "Invalid Login");
+        JOptionPane.showMessageDialog(this, "Invalid Login", "Login Failed", JOptionPane.ERROR_MESSAGE );
         return;
     }
 
-    // ADMIN
+
     if ("LOGIN_SUCCESS_ADMIN".equals(result)) {
 
         JOptionPane.showMessageDialog(this, "Admin Login Successful");
@@ -251,7 +251,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     }
 
-    // DENTIST
+   
     else if ("LOGIN_SUCCESS_Dentist".equals(result)) {
 
         JOptionPane.showMessageDialog(this, "Dentist Login Successful");
@@ -273,7 +273,7 @@ public class LoginForm extends javax.swing.JFrame {
         
     }
 
-    // STAFF
+    
     else if ("LOGIN_SUCCESS_Staff".equals(result)) {
 
     JOptionPane.showMessageDialog(this, "Staff Login Successful");

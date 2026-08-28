@@ -234,35 +234,42 @@ public class RegisterForm extends javax.swing.JFrame {
         String confirmPassword = String.valueOf(jPasswordField2.getPassword());
         
         RegistrationController controller = new RegistrationController();
+      
         
         String result = controller.Register(name, username, password, confirmPassword);
         
         if (result.equals("Enter Name")){
             JOptionPane.showMessageDialog(this, "Enter Name");
+            jTextField2.requestFocus();
             
             return;
         }
         
         if (result.equals("Enter Username")){
             JOptionPane.showMessageDialog(this, "Enter Username");
+            jTextField1.requestFocus();
             
             return;
         }
         
         if (result.equals("Enter Password")){
             JOptionPane.showMessageDialog(this, "Enter Password");
+            jPasswordField1.requestFocus();
             
             return;
         }
         
         if (result.equals("Enter Confirm Password")){
             JOptionPane.showMessageDialog(this, "Enter Confirm Password");
+            jPasswordField2.requestFocus();
             
             return;
         }
         
         if (result.equals("Passwords do not match")){
             JOptionPane.showMessageDialog(this, "Enter Confirm Password");
+            jPasswordField2.setText("");
+            jPasswordField2.requestFocus();
             
             return;
         }

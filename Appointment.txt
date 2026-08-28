@@ -278,3 +278,21 @@ Treatment Type: Whitening
 Appointment Date: 2026-10-11
 Appointment Time: 01:30 PM
 ----------------------------------------------
+Appointment Number: 132
+Patient Name: John Cena
+Address: New York
+Contact Number: 0778965412
+Dentist Name: Dr. Marian
+Treatment Type: Root Canal
+Appointment Date: 2026-05-25
+Appointment Time: 04:00 PM
+----------------------------------------------
+Appointment Number: 211
+Patient Name: Jane Foster
+Address: Colombo
+Contact Number: 0774536921
+Dentist Name: Dr. Marian
+Treatment Type: Tooth Extraction
+Appointment Date: 2026-01-20
+Appointment Time: 04:25 PM
+----------------------------------------------

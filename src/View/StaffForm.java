@@ -42,15 +42,15 @@ public class StaffForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
+        newbtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
+        helpbtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
+        billbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
 
@@ -173,19 +173,19 @@ public class StaffForm extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(51, 0, 153));
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton7.setText("Open");
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+        newbtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        newbtn.setText("Open");
+        newbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton7MouseEntered(evt);
+                newbtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton7MouseExited(evt);
+                newbtnMouseExited(evt);
             }
         });
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        newbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7jButton2ActionPerformed(evt);
+                newbtnjButton2ActionPerformed(evt);
             }
         });
 
@@ -193,46 +193,53 @@ public class StaffForm extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Register New Appointment");
 
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-appointment-100 (1).png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addContainerGap()
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addComponent(newbtn)
                         .addGap(134, 134, 134)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addComponent(newbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29))
         );
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-appointment-100 (1).png"))); // NOI18N
-
         jPanel11.setBackground(new java.awt.Color(51, 0, 153));
 
-        jButton8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton8.setText("Open");
-        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+        helpbtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        helpbtn.setText("Open");
+        helpbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton8MouseEntered(evt);
+                helpbtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton8MouseExited(evt);
+                helpbtnMouseExited(evt);
             }
         });
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        helpbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8jButton2ActionPerformed(evt);
+                helpbtnjButton2ActionPerformed(evt);
             }
         });
 
@@ -254,7 +261,7 @@ public class StaffForm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jButton8)))
+                        .addComponent(helpbtn)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -266,25 +273,25 @@ public class StaffForm extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(helpbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29))
         );
 
         jPanel12.setBackground(new java.awt.Color(51, 0, 153));
 
-        jButton9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton9.setText("Open");
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+        billbtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        billbtn.setText("Open");
+        billbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton9MouseEntered(evt);
+                billbtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton9MouseExited(evt);
+                billbtnMouseExited(evt);
             }
         });
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        billbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9jButton2ActionPerformed(evt);
+                billbtnjButton2ActionPerformed(evt);
             }
         });
 
@@ -304,7 +311,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jButton9))
+                        .addComponent(billbtn))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)))
@@ -319,7 +326,7 @@ public class StaffForm extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(billbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29))
         );
 
@@ -329,8 +336,8 @@ public class StaffForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(215, 215, 215))
@@ -340,11 +347,6 @@ public class StaffForm extends javax.swing.JFrame {
                 .addGap(240, 240, 240))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(106, 106, 106)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(878, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(125, 125, 125)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(887, Short.MAX_VALUE)))
@@ -352,23 +354,17 @@ public class StaffForm extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)))
-                .addGap(19, 19, 19)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(62, 62, 62)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(129, 129, 129)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(303, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(366, Short.MAX_VALUE)
@@ -380,11 +376,14 @@ public class StaffForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -415,7 +414,7 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void dispalybtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dispalybtnMouseEntered
         // TODO add your handling code here:
-        dispalybtn.setBackground(Color.RED);
+        dispalybtn.setBackground(Color.green);
     }//GEN-LAST:event_dispalybtnMouseEntered
 
     private void dispalybtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dispalybtnMouseExited
@@ -429,47 +428,54 @@ public class StaffForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_dispalybtnjButton2ActionPerformed
 
-    private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7MouseEntered
-
-    private void jButton7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7MouseExited
-
-    private void jButton7jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7jButton2ActionPerformed
-        // TODO add your handling code here:
-        new AppointmentForm().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton7jButton2ActionPerformed
-
-    private void jButton8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8MouseEntered
-
-    private void jButton8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8MouseExited
-
-    private void jButton8jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8jButton2ActionPerformed
+    private void helpbtnjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpbtnjButton2ActionPerformed
         // TODO add your handling code here:
         new HelpForm().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton8jButton2ActionPerformed
+    }//GEN-LAST:event_helpbtnjButton2ActionPerformed
 
-    private void jButton9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseEntered
+    private void helpbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpbtnMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9MouseEntered
+      helpbtn.setBackground(Color.white);
+    }//GEN-LAST:event_helpbtnMouseExited
 
-    private void jButton9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseExited
+    private void helpbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpbtnMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9MouseExited
+        helpbtn.setBackground(Color.green);
+    }//GEN-LAST:event_helpbtnMouseEntered
 
-    private void jButton9jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9jButton2ActionPerformed
+    private void billbtnjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billbtnjButton2ActionPerformed
         // TODO add your handling code here:
         new BillForm().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton9jButton2ActionPerformed
+    }//GEN-LAST:event_billbtnjButton2ActionPerformed
+
+    private void billbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billbtnMouseExited
+        // TODO add your handling code here:
+        billbtn.setBackground(Color.white);
+
+    }//GEN-LAST:event_billbtnMouseExited
+
+    private void billbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billbtnMouseEntered
+        // TODO add your handling code here:
+        billbtn.setBackground(Color.green);
+    }//GEN-LAST:event_billbtnMouseEntered
+
+    private void newbtnjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newbtnjButton2ActionPerformed
+        // TODO add your handling code here:
+        new AppointmentForm().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_newbtnjButton2ActionPerformed
+
+    private void newbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newbtnMouseExited
+        // TODO add your handling code here:
+        newbtn.setBackground(Color.white);
+    }//GEN-LAST:event_newbtnMouseExited
+
+    private void newbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newbtnMouseEntered
+        // TODO add your handling code here:
+        newbtn.setBackground(Color.green);
+    }//GEN-LAST:event_newbtnMouseEntered
 
     /**
      * @param args the command line arguments
@@ -509,10 +515,9 @@ public class StaffForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Logoutbtn3;
+    private javax.swing.JButton billbtn;
     private javax.swing.JButton dispalybtn;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton helpbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -530,5 +535,6 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton newbtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,6 +39,7 @@ public class MenuForm extends javax.swing.JFrame {
         initComponents();
         
        
+        setLocation(100, 20);
         
         Table();
         
@@ -495,7 +496,7 @@ public class MenuForm extends javax.swing.JFrame {
 
     private void RegbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegbtnActionPerformed
         // TODO add your handling code here:
-        new AppointmentForm().setVisible(true);
+        new AppointmentForm2().setVisible(true);
         dispose();
     }//GEN-LAST:event_RegbtnActionPerformed
 

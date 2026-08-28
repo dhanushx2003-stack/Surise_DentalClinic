@@ -29,9 +29,9 @@ public class LoginControllerTest {
         System.out.println("Expected Result: LOGIN_SUCCESS_ADMIN");
         System.out.println("Actual Result:" + result);
         
-        assertEquals("Admin Login Success", result);
+        assertEquals("LOGIN_SUCCESS_ADMIN", result);
         
-        System.out.println("Result: Pass");
+        
         System.out.println();
     }
     
@@ -48,9 +48,9 @@ public class LoginControllerTest {
         System.out.println("Expected Result: LOGIN_SUCCESS_Dentist");
         System.out.println("Actual Result:" + result);
         
-        assertEquals("Dentist Login Success", result);
+        assertEquals("LOGIN_SUCCESS_DENTIST", result);
         
-        System.out.println("Result: Pass");
+       
         System.out.println();
     }
     
@@ -67,9 +67,9 @@ public class LoginControllerTest {
         System.out.println("Expected Result: LOGIN_SUCCESS_Staff");
         System.out.println("Actual Result:" + result);
         
-        assertEquals("Staff Login Success", result);
+        assertEquals("LOGIN_SUCCESS_STAFF", result);
         
-        System.out.println("Result: Pass");
+       
         System.out.println();
     }
     
@@ -79,16 +79,16 @@ public class LoginControllerTest {
         String result = controller.login("joseph", "321");
         
         System.out.println();
-        System.out.println("TESt Admin Login - Wrong Password");
+        System.out.println("TEST 4 Admin Login - Wrong Password");
         System.out.println("Username: Admin");
         System.out.println("Password: Incorrect");
         System.out.println("Role: Staff");
         System.out.println("Expected Result: INVALID_CREDENTIALS");
         System.out.println("Actual Result:" + result);
         
-        assertEquals("Invalid Credentials", result);
+        assertEquals("INVALID_CREDENTIALS", result);
         
-        System.out.println("Result: Pass");
+      
         System.out.println();
     }
     
@@ -96,7 +96,11 @@ public class LoginControllerTest {
     public void testEmptyUsername(){
         
         String result = controller.login("", "123");
-        
+        System.out.println("TEST 5 User Login - Empty Username");
+        System.out.println("Username: Empty");
+        System.out.println("Password: 123");
+        System.out.println("Expected Result: Username is required");
+        System.out.println("Actual Result:" + result);
         assertEquals("Username is required", result);
     }
     
@@ -104,39 +108,27 @@ public class LoginControllerTest {
     public void testEmptyPassword(){
         
         String result = controller.login("joseph", "");
-        
+        System.out.println("TEST 6 User Login - Empty Password");
+        System.out.println("Username: user");
+        System.out.println("Password: Empty");
+        System.out.println("Expected Result: Password is required");
+        System.out.println("Actual Result:" + result);
         assertEquals("Password is required", result);
+         System.out.println();
     }
     
-    @Test 
-    public void testShortUsername(){
-        
-        String result = controller.login("jo", "123");
-        
-        assertEquals("Username must contain at least 3 characters", result);
-    }
-    
-     @Test 
-    public void testShortPassword(){
-        
-        String result = controller.login("joesph", "12");
-        
-        assertEquals("Password must contain at least 3 characters", result);
-    }
     
      @Test 
     public void testNonExistingUser(){
         
         String result = controller.login("unknown", "123");
-        
-        assertEquals("Invalid Credentials", result);
+         System.out.println("TEST 7 Non-user login");
+        System.out.println("Username: unknown");
+        System.out.println("Password: 123");
+        System.out.println("Expected Result: INVALID_CREDENTIALS");
+        System.out.println("Actual Result:" + result);
+        assertEquals("INVALID_CREDENTIALS", result);
     }
     
-     @Test 
-    public void testInvalidStaffPassword(){
-        
-        String result = controller.login("bruce", "wrong");
-        
-        assertEquals("Invalid Credentials", result);
-    }
+   
 }

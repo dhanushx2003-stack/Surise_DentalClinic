@@ -329,7 +329,7 @@ public class BillForm extends javax.swing.JFrame {
         Bill.append("Treatment Cost: ").append(jTextField5.getText()).append("\n");
         Bill.append("Consultation Fee: ").append(jTextField7.getText()).append("\n");
         Bill.append("---------------------------------------------------\n");
-        Bill.append("Total Treatment Cost: ").append(jTextField6.getText()).append("\n");
+        Bill.append("Total Treatment Cost: Rs. ").append(jTextField6.getText()).append("\n");
 
         PrinterJob job = PrinterJob.getPrinterJob();
 

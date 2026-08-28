@@ -50,23 +50,23 @@ public class LoginController {
         String role = staffDAO.login(username, password);
         
         if (role == null){
-            return "Invalid Credentials";
+            return "INVALID_CREDENTIALS";
         }
         
         role = role.trim();
         
         if (role.equalsIgnoreCase("ADMIN")){
-            return "Admin Login Success";
+            return "LOGIN_SUCCESS_ADMIN";
         }
         
          if (role.equalsIgnoreCase("Dentist")){
-            return "Dentist Login Success";
+            return "LOGIN_SUCCESS_DENTIST";
         }
          
           if (role.equalsIgnoreCase("Staff")){
-            return "Staff Login Success";
+            return "LOGIN_SUCCESS_STAFF";
         }
           
-          return "LOGIN_SUCCESS";
+          return "INVALID_CREDENTIALS";
     }
 }
