@@ -296,3 +296,12 @@ Treatment Type: Tooth Extraction
 Appointment Date: 2026-01-20
 Appointment Time: 04:25 PM
 ----------------------------------------------
+Appointment Number: 120
+Patient Name: Maya Fernando
+Address: Kandy
+Contact Number: 07796512485
+Dentist Name: Dr. Wilson
+Treatment Type: Whitening
+Appointment Date: 2026-10-11
+Appointment Time: 01:30 PM
+----------------------------------------------

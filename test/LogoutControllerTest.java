@@ -32,7 +32,7 @@ public class LogoutControllerTest {
     public void testDentistLogout(){
         
         String result = controller.Logout();
-        System.out.println("TEST 1 Dentist Logout");
+        System.out.println("TEST 2 Dentist Logout");
         System.out.println("Function: Dentist clicks Logout");
         System.out.println("Expected Result: Logout Successful");
         System.out.println("Actual Result: " + result);
@@ -44,7 +44,7 @@ public class LogoutControllerTest {
     public void testAdminLogout(){
         
         String result = controller.Logout();
-        System.out.println("TEST 1 Admin Logout");
+        System.out.println("TEST 3 Admin Logout");
         System.out.println("Function: Admin clicks Logout");
         System.out.println("Expected Result: Logout Successful");
         System.out.println("Actual Result: " + result);

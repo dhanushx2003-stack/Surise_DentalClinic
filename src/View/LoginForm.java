@@ -252,7 +252,7 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
    
-    else if ("LOGIN_SUCCESS_Dentist".equals(result)) {
+    else if ("LOGIN_SUCCESS_DENTIST".equals(result)) {
 
         JOptionPane.showMessageDialog(this, "Dentist Login Successful");
 
@@ -274,7 +274,7 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     
-    else if ("LOGIN_SUCCESS_Staff".equals(result)) {
+    else if ("LOGIN_SUCCESS_STAFF".equals(result)) {
 
     JOptionPane.showMessageDialog(this, "Staff Login Successful");
 

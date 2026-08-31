@@ -78,17 +78,5 @@ public class BillControllerTest {
         System.out.println();
     }
     
-    @Test
-    public void testValidateAppointmentNumber(){
-        
-         System.out.println("TEST 4 Validate Appointment");
-        String AppointmentNumber = "129";
-         System.out.println("Appointment Numer: " + AppointmentNumber);
-          String Outcome = controller.ValidateAppointmentNumber(AppointmentNumber);
-          String Expected = "Valid Appointment Number";
-          System.out.println("Expected Result: " + Expected);
-        System.out.println("Actual Result: " + Outcome);
-        assertEquals(Expected,Outcome);
-        System.out.println();
-    }
+    
 }

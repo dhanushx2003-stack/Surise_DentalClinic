@@ -22,6 +22,8 @@ public class HelpControllerTest {
         String HelpSection = controller.HelpSection();
 
         System.out.println("TEST Help Section");
+        System.out.println("Function: Staff click on Help Section");
+        System.out.println("");
         System.out.println("" + Help);
 
         System.out.println(HelpSection);

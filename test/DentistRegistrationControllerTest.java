@@ -38,7 +38,7 @@ public class DentistRegistrationControllerTest {
         String result = controller.RegisterDentist("", "christine", "123", "123");
         System.out.println("");
         System.out.println("TEST 2 Empty Name");
-        System.out.println("Name: ");
+        System.out.println("Name: Empty");
         System.out.println("Username: christine");
         System.out.println("Password: 123");
         System.out.println("Confirm Password: 123");

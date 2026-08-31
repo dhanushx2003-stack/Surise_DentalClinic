@@ -63,7 +63,7 @@ public class DisplayAppointmentControllerTest {
     
     @Test
     public void testDeleteAppointment(){
-        String AppointmentNo = "124";
+        String AppointmentNo = "111";
         String expected = "Patient Appointment Deleted";
         String actual = controller.DeleteAppointment(AppointmentNo);
         System.out.println();
@@ -78,7 +78,7 @@ public class DisplayAppointmentControllerTest {
     
     @Test
     public void testDeletNonExistingAppointment(){
-        String AppointmentNo = "122";
+        String AppointmentNo = "511";
         String expected = "Select an Appointment";
         String actual = controller.DeleteAppointment(AppointmentNo);
         System.out.println();
