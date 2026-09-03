@@ -8,25 +8,19 @@ import Controller.BillController;
 import dao.AppointmentDAO;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import java.awt.print.PrinterJob;
 import java.sql.ResultSet;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.Image;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import javax.swing.JOptionPane;
-import java.awt.print.PrinterException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-
-
-
-
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.Chunk;
+import com.lowagie.text.pdf.BaseFont;
 
 /**
  *
@@ -39,25 +33,120 @@ public class BillForm extends javax.swing.JFrame {
      */
     public BillForm() {
         initComponents();
-        
-        setLocation(470,150);
-        
+
+        setLocation(470, 150);
+
         Font font = new Font("Times New Roman", Font.PLAIN, 14);
-        
+
         jTextField1.setFont(font);
         jTextField2.setFont(font);
         jTextField3.setFont(font);
         jTextField4.setFont(font);
         jTextField5.setFont(font);
-        jTextField6.setFont(new Font("Times New Romab", Font.BOLD, 14));
+        jTextField6.setFont(new Font("Times New Roman", Font.BOLD, 14));
         jTextField7.setFont(font);
     }
-    
-    private void PrintBill(){
-        
-        
-        
-        
+
+    private void PrintBill() {
+
+        if (jTextField1.getText().trim().isEmpty() || jTextField2.getText().trim().isEmpty() || jTextField6.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter Appointment Number", "Print Bill", JOptionPane.WARNING_MESSAGE);
+
+            return;
+        }
+
+        String PatientName = jTextField2.getText().trim();
+
+        String FilePath = System.getProperty("user.home") + "\\Desktop\\Sunrise_DentalClinic Bill_" + PatientName + ".pdf";
+
+        Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream(FilePath));
+
+            document.open();
+            BaseFont timesRoman = BaseFont.createFont("C:\\Windows\\Fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+
+            com.lowagie.text.Font headerFont = new com.lowagie.text.Font(com.lowagie.text.Font.TIMES_ROMAN, 20, com.lowagie.text.Font.BOLD);
+            com.lowagie.text.Font normalFont = new com.lowagie.text.Font(com.lowagie.text.Font.TIMES_ROMAN, 18, com.lowagie.text.Font.NORMAL);
+            com.lowagie.text.Font totalFont = new com.lowagie.text.Font(com.lowagie.text.Font.TIMES_ROMAN, 18, com.lowagie.text.Font.BOLD);
+
+            PdfPTable headerTable = new PdfPTable(2);
+            headerTable.setWidths(new float[]{80, 250});
+
+            headerTable.setTotalWidth(330);
+            headerTable.setLockedWidth(true);
+
+            headerTable.setHorizontalAlignment(PdfPTable.ALIGN_CENTER);
+
+            Image logo = Image.getInstance(getClass().getResource("/Images/tooth.png"));
+            logo.scaleToFit(100, 100);
+
+          
+
+
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+
+
+            Chunk logoChunk = new Chunk(logo, 0, -40);
+
+
+            header.add(logoChunk);
+            header.add(new Chunk("   SUNRISE DENTAL CLINIC", headerFont));
+
+
+            document.add(header);
+
+            document.add(new Paragraph(" "));
+
+            document.add(new Paragraph("Appointment Number: " + jTextField1.getText(), normalFont));
+            document.add(new Paragraph("Patient Name: " + jTextField2.getText(), normalFont));
+            document.add(new Paragraph("Dentist Name: " + jTextField3.getText(), normalFont));
+            document.add(new Paragraph("Treatment Type: " + jTextField4.getText(), normalFont));
+            document.add(new Paragraph("Treatment Cost: " + jTextField5.getText(), normalFont));
+            document.add(new Paragraph("Consultation Fee: " + jTextField7.getText(), normalFont));
+            document.add(new Paragraph("-------------------------------------------", normalFont));
+            document.add(new Paragraph("Total Cost: " + jTextField6.getText(), normalFont));
+
+            document.close();
+
+            File pdfFile = new File(FilePath);
+
+            String[] chromePaths = {
+                "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+                "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+                System.getProperty("user.home") + "\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"
+            };
+
+            boolean chromeOpened = false;
+
+            for (String chromePath : chromePaths) {
+                File chrome = new File(chromePath);
+
+                if (chrome.exists()) {
+                    new ProcessBuilder(chromePath, pdfFile.getAbsolutePath()).start();
+
+                    chromeOpened = true;
+
+                    break;
+                }
+            }
+
+            if (!chromeOpened) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "PDF Saved: " + FilePath + "\nGoogle Chrome not opening.",
+                        "Bill Saved",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+
+        } catch (DocumentException | IOException e) {
+            JOptionPane.showMessageDialog(this, "Error:\n" + e.getMessage(), "PDF Error", JOptionPane.ERROR_MESSAGE);
+
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -320,70 +409,8 @@ public class BillForm extends javax.swing.JFrame {
 
     private void Billbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Billbtn1ActionPerformed
         // TODO add your handling code here:
-        StringBuilder Bill = new StringBuilder();
-        
-        Bill.append("Appointment Number: ").append(jTextField1.getText()).append("\n");
-        Bill.append("Patient Name: ").append(jTextField2.getText()).append("\n");
-        Bill.append("Dentist Name: ").append(jTextField3.getText()).append("\n");
-        Bill.append("Treatment Type: ").append(jTextField4.getText()).append("\n");
-        Bill.append("Treatment Cost: ").append(jTextField5.getText()).append("\n");
-        Bill.append("Consultation Fee: ").append(jTextField7.getText()).append("\n");
-        Bill.append("---------------------------------------------------\n");
-        Bill.append("Total Treatment Cost: Rs. ").append(jTextField6.getText()).append("\n");
 
-        PrinterJob job = PrinterJob.getPrinterJob();
-
-        job.setJobName("Sunrise Dental Clinic Bill");
-
-        job.setPrintable((graphics, pageFormat, pageIndex) -> {
-
-            if (pageIndex > 0) {
-                return Printable.NO_SUCH_PAGE;
-            }
-
-            Graphics2D g = (Graphics2D) graphics;
-
-            g.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-
-            try{
-                BufferedImage logo = ImageIO.read(
-                    getClass().getResource("/Images/tooth.png"));
-                g.drawImage(logo, 40, 45, 120, 120, null);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-
-            g.setFont(new Font("Times New Roman", Font.BOLD, 24));
-            g.drawString("SUNRISE DENTAL CLINIC", 180, 105);
-
-            g.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-
-            int y = 160;
-
-            for (String line : Bill.toString().split("\n")) {
-
-                g.drawString(line, 60, y);
-
-                y += 25;
-            }
-
-            g.drawLine(50, y, 500, y);
-
-            return Printable.PAGE_EXISTS;
-
-        });
-
-        try {
-
-            if (job.printDialog()) {
-                job.print();
-            }
-
-        } catch (PrinterException e) {
-
-            e.printStackTrace();
-
-        }
+        PrintBill();
     }//GEN-LAST:event_Billbtn1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -417,18 +444,18 @@ public class BillForm extends javax.swing.JFrame {
         String Appointmentumber = jTextField1.getText();
         BillController controller = new BillController();
         String Validation = controller.ValidateAppointmentNumber(Appointmentumber);
-        
-        if(!Validation.equals("Valid Appointment Number")){
+
+        if (!Validation.equals("Valid Appointment Number")) {
             JOptionPane.showMessageDialog(this, Validation);
             return;
         }
-      
+
         int AppointmentNo = Integer.parseInt(jTextField1.getText());
         AppointmentDAO dao = new AppointmentDAO();
         ResultSet rs = dao.searchAppointment(AppointmentNo);
 
-        try{
-            if(rs.next()){
+        try {
+            if (rs.next()) {
                 jTextField2.setText(rs.getString("PatientName"));
                 String DentistName = rs.getString("DentistName");
                 jTextField3.setText(DentistName);
@@ -436,48 +463,48 @@ public class BillForm extends javax.swing.JFrame {
                 jTextField4.setText(Treatment);
                 double TreatmentCost = 0;
 
-                switch(Treatment){
+                switch (Treatment) {
                     case "Root Canal":
-                    TreatmentCost = 1000;
-                    break;
+                        TreatmentCost = 1000;
+                        break;
 
                     case "Whitening":
-                    TreatmentCost = 2000;
-                    break;
+                        TreatmentCost = 2000;
+                        break;
 
                     case "Cleaning":
-                    TreatmentCost = 3000;
-                    break;
+                        TreatmentCost = 3000;
+                        break;
 
                     case "Dental Implants":
-                    TreatmentCost = 4000;
-                    break;
+                        TreatmentCost = 4000;
+                        break;
 
                     case "Tooth Extraction":
-                    TreatmentCost = 5000;
-                    break;
+                        TreatmentCost = 5000;
+                        break;
                 }
 
                 double ConsultationFee = 0;
-                
-                switch (DentistName){
+
+                switch (DentistName) {
                     case "Dr. Ranjan":
                         ConsultationFee = 500;
                         break;
-                        
-                        case "Dr. Marian":
+
+                    case "Dr. Marian":
                         ConsultationFee = 600;
                         break;
-                        
-                        case "Dr. Wilson":
+
+                    case "Dr. Wilson":
                         ConsultationFee = 700;
                         break;
-                        
-                        case "Dr. Joseph":
+
+                    case "Dr. Joseph":
                         ConsultationFee = 800;
                         break;
-                        
-                        case "Dr. Christine":
+
+                    case "Dr. Christine":
                         ConsultationFee = 900;
                         break;
                 }
@@ -487,13 +514,11 @@ public class BillForm extends javax.swing.JFrame {
                 jTextField7.setText(String.valueOf(ConsultationFee));
                 jTextField6.setText(String.valueOf(TotalCost));
 
-                PrintBill();
-
             } else {
                 JOptionPane.showMessageDialog(this, "Patient Not Found");
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_SearchbtnActionPerformed
@@ -517,7 +542,7 @@ public class BillForm extends javax.swing.JFrame {
     }//GEN-LAST:event_BillbtnMouseExited
 
     private void BillbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillbtnActionPerformed
-         new StaffForm().setVisible(true);
+        new StaffForm().setVisible(true);
         dispose();
     }//GEN-LAST:event_BillbtnActionPerformed
 
@@ -578,6 +603,4 @@ public class BillForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 
-    
 }
-
